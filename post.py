@@ -26,7 +26,6 @@ for root, dirs, files in os.walk(os.getcwd()):
 for name in file_list:
                 img=cv2.imread(name)
                 img2=cv2.resize(img,size)
-                cv2.imshow("img2",img2)
                 new_name="resized"+name
                 cv2.imwrite (new_name,img2)
                 time.sleep(randint(4,11))
