@@ -9,11 +9,12 @@ os.system("pip install myigbot")
 from myigbot import MyIGBot
 usr="Enter_Username"
 pw="Enter_Password"
-Caption=""" Meet, nyarlko.com best homepage for Weebs!
+Caption="""nyarlko.com 
 You should really change this caption.
+
 Tags
 --------------------------------
-#anime #manga
+#send #me #joke
 Instagram Post Automation
 """
 size = (1024, 1024) #Photo Size
