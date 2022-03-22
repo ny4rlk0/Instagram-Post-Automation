@@ -13,7 +13,7 @@ Caption=""" nyarlko.com
 
 Tags
 --------------------------------
-#movie #joke
+#movie #joke #anime
 """
 size = (1024, 1024) #Photo Size
 file_list=[] # JPG File list
