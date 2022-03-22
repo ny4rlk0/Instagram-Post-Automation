@@ -4,3 +4,4 @@
 <br>Enter your username to usr and your password to pw.
 <br>If you have 2fa it will ask you 1 time for the code. Then it will create a cookie.
 <br>Which will allows autologin with it. It will be on same folder so don't lose the cookie.
+<br>There is a reason for sleep timer. So don't go ahead and remove it if you dont know what you are doing.
