@@ -1,18 +1,20 @@
 #coding: utf-8
+#https://github.com/ny4rlk0/Instagram-Post-Automation/
+#Uploads all images on the same directory or sub directories to instagram. Only jpg files. 1 Post pepr jpg file.
 import os,sys,time,json
 from random import randint
 os.system("pip install opencv-python")
 import cv2,pprint
 os.system("pip install myigbot")
 from myigbot import MyIGBot
-usr="ENTER_USERNAME"
-pw="ENTER_PASSWORD"
-Caption=""" Some caption text
-
+usr="Enter_Username"
+pw="Enter_Password"
+Caption=""" Meet, nyarlko.com best homepage for Weebs!
+You should really change this caption.
 Tags
 --------------------------------
 #anime #manga
-IPA
+Instagram Post Automation
 """
 size = (1024, 1024) #Photo Size
 file_list=[] # JPG File list
@@ -30,5 +32,8 @@ for name in file_list:
                 cv2.imwrite (new_name,img2)
                 time.sleep(randint(4,10))
                 response = bot.upload_post(new_name, caption=Caption)
-                print(response+" <----- 200 ise = BAŞARILI YÜKLEME")
-                #os.remove(new_name+".REMOVE_ME")
+                if response=="200":
+                    print(name+"uploaded successfully!")
+                else:
+                    print("HTTPS CODE: "+response)
+                os.remove(new_name)
