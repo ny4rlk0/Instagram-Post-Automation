@@ -3,9 +3,8 @@
 #Uploads all images on the same directory or sub directories to instagram. Only jpg files. 1 Post pepr jpg file.
 import os,sys,time,json
 from random import randint
-os.system("pip install opencv-python")
+os.system("pip install opencv-python myigbot")
 import cv2,pprint
-os.system("pip install myigbot")
 from myigbot import MyIGBot
 usr="Enter_Username"
 pw="Enter_Password"
