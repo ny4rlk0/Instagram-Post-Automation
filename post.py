@@ -9,12 +9,11 @@ os.system("pip install myigbot")
 from myigbot import MyIGBot
 usr="Enter_Username"
 pw="Enter_Password"
-Caption=""" Meet, nyarlko.com best homepage for Weebs!
+Caption=""" nyarlko.com
 
 Tags
 --------------------------------
-#anime #manga
-Nyarlko A.I.
+#movie #joke
 """
 size = (1024, 1024) #Photo Size
 file_list=[] # JPG File list
