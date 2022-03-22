@@ -9,13 +9,12 @@ os.system("pip install myigbot")
 from myigbot import MyIGBot
 usr="Enter_Username"
 pw="Enter_Password"
-Caption="""nyarlko.com 
-You should really change this caption.
+Caption=""" Meet, nyarlko.com best homepage for Weebs!
 
 Tags
 --------------------------------
-#send #me #joke
-Instagram Post Automation
+#anime #manga
+Nyarlko A.I.
 """
 size = (1024, 1024) #Photo Size
 file_list=[] # JPG File list
@@ -31,10 +30,13 @@ for name in file_list:
                 cv2.imshow("img2",img2)
                 new_name="resized"+name
                 cv2.imwrite (new_name,img2)
-                time.sleep(randint(4,10))
+                time.sleep(randint(4,11))
                 response = bot.upload_post(new_name, caption=Caption)
-                if response=="200":
-                    print(name+"uploaded successfully!")
+                if str(response)=="200":
+                    print(name+" uploaded successfully!")
                 else:
-                    print("HTTPS CODE: "+response)
-                os.remove(new_name)
+                    print("HTTPS CODE: "+str(response))
+                try:
+                    os.remove(new_name)
+                    os.remove(name)
+                except:pass
