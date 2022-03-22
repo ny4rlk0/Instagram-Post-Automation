@@ -15,6 +15,7 @@ Tags
 --------------------------------
 #movie #joke #anime
 """
+counter=0
 size = (1024, 1024) #Photo Size
 file_list=[] # JPG File list
 bot = MyIGBot(usr,pw)
@@ -26,12 +27,14 @@ for root, dirs, files in os.walk(os.getcwd()):
 for name in file_list:
                 img=cv2.imread(name)
                 img2=cv2.resize(img,size)
+                #cv2.imshow("img2",img2)
                 new_name="resized"+name
                 cv2.imwrite (new_name,img2)
                 time.sleep(randint(4,11))
                 response = bot.upload_post(new_name, caption=Caption)
+                counter+= 1
                 if str(response)=="200":
-                    print(name+" uploaded successfully!")
+                    print(name+" uploaded successfully! "+str(counter))
                 else:
                     print("HTTPS CODE: "+str(response))
                 try:
