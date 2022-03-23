@@ -1,6 +1,6 @@
 #coding: utf-8
 #https://github.com/ny4rlk0/Instagram-Post-Automation/
-#Uploads all images on the same directory or sub directories to instagram. Only jpg files. 1 Post pepr jpg file.
+#Uploads all images on the same directory or sub directories to instagram. Only jpg files. 1 Post per jpg file.
 current_upload_counter=0;new_counter=0
 import os,sys,time,json;from random import randint
 os.system("pip install opencv-python myigbot")
