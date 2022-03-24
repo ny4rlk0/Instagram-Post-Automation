@@ -52,5 +52,5 @@ def main():
         deletefiles(name,"resized"+name)
         if photo_upload_counter==current_upload_counter:
             break
-        time.sleep(randint(30,35)) #Waits random 30-35 seconds before post!    
+        time.sleep(randint(5,11)) #Waits random seconds before post!    
 main()
