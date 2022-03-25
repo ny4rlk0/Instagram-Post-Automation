@@ -30,9 +30,11 @@ def resizephotos(name):
     new_name="resized"+name
     cv2.imwrite(new_name,img2)
 def uploadfiles(name):
+    response="Error"
     global new_counter,current_upload_counter
-    response = bot.upload_post(name, caption=Caption)
-    new_counter+= 1
+    try:response = bot.upload_post(name, caption=Caption)
+    except:print("HTTPS ERROR CODE: "+str(response))
+    else:new_counter+= 1
     if str(response)=="200":
         print(name+" uploaded successfully! "+str(new_counter))
         current_upload_counter+=1
