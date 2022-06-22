@@ -4,7 +4,7 @@
 current_upload_counter=0;new_counter=0
 import os,sys,time,json;from random import randint
 os.system("pip install opencv-python myigbot")
-import cv2,pprint;from myigbot import MyIGBot
+import cv2,pprint;from myigbot import MyIGBot;import imghdr
 
 usr="USERNAME"
 pw="PASSWORD"
@@ -24,13 +24,19 @@ def scanfiles():
         for file in files:
             if file.endswith(".JPG") or file.endswith(".jpg"):
                 file_list.append(os.path.join(file))
+def chkphototype(name):#Anything else other then jpeg is not uploadable.
+    file_type=imghdr.what(name)
+    if file_type!='jpeg':
+        os.rename(name,"not_an_JPEG_"+name)
+        return "nope"
+    else: return "ok"
 def resizephotos(name):
     img=cv2.imread(name)
     img2=cv2.resize(img,size)
     new_name="resized"+name
     cv2.imwrite(new_name,img2)
 def uploadfiles(name):
-    response="Error"
+    response="Script Error Detected Skipping The File..."
     global new_counter,current_upload_counter
     try:response = bot.upload_post(name, caption=Caption)
     except:print("HTTPS ERROR CODE: "+str(response))
@@ -49,6 +55,8 @@ def main():
     global new_counter,current_upload_counter,photo_upload_counter
     scanfiles()
     for name in file_list:
+        if chkphototype(name)=="nope":
+            continue
         resizephotos(name)
         uploadfiles("resized"+name)
         deletefiles(name,"resized"+name)
