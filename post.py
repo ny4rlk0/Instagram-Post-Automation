@@ -39,7 +39,7 @@ def uploadfiles(name):
     response="Script Error Detected Skipping The File..."
     global new_counter,current_upload_counter
     try:response = bot.upload_post(name, caption=Caption)
-    except:print("HTTPS ERROR CODE: "+str(response))
+    except:print("HTTPS ERROR CODE: "+str(response)+"( While Uploading Post)")
     else:new_counter+= 1
     if str(response)=="200":
         print(name+" uploaded successfully! "+str(new_counter))
